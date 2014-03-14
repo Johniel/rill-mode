@@ -1,0 +1,31 @@
+def main (): int
+{
+    print( "hello, bunchou lang!!!" );
+    test();
+    return 0;
+}
+
+def test_0(): void
+{
+    extern_print_string( foo( ( 10*2 )*(1+2*2   ), 10 ) + 2 * 5 );
+}
+
+extern def extern_print_string( :int ): void "put_string2";
+
+def foo( fuga: int, hoge: int ): int
+{
+    foo(fuga) * hoge;
+    return foo(fuga) * hoge;
+}
+
+def foo( a: int ): int
+{
+    return a;
+}
+
+a // comment a
+a ;/*empty statment*/;;;
+
+class Klass {
+    val xs: array(int, 5);
+}
