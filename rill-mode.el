@@ -66,21 +66,24 @@
   "\\(//.*$\\|/\\*.*\\*/\\)")
 
 (defconst rill-def-var-regexp
-  "\\(\\sw*\\)\\s-*:\\s-*\\(\\sw+\\)")
+  "\\(val\\|ref\\)\\s-*\\(\\sw+\\).*?:\\s-*\\(\\sw+\\)\\(,\\|;\\)?")
 
 (defconst rill-keywords-regexp
   "\\<\\(return\\|val\\|extern\\|for\\|while\\|if\\|else\\)\\>[^_]")
 
+(defconst rill-mutable-type-regexp
+  "mutable(\\(\\sw+\\))")
+
 (defconst rill-font-lock-keywords
-  `(
-    (,rill-def-regexp (1 font-lock-keyword-face)
+  `((,rill-def-regexp (1 font-lock-keyword-face)
                       (2 font-lock-type-face))
     (,rill-boolean-keywords-regexp . font-lock-keyword-face)
-    (,rill-def-var-regexp (1 font-lock-variable-name-face)
-                          (2 font-lock-type-face))
+    (,rill-def-var-regexp (1 font-lock-keyword-face)
+                          (2 font-lock-variable-name-face)
+                          (3 font-lock-type-face))
     (,rill-comment-regexp . font-lock-comment-face)
     (,rill-keywords-regexp . font-lock-keyword-face)
-    ))
+    (,rill-mutable-type-regexp (1 font-lock-type-face))))
 
 ;;
 ;; Define Major Mode

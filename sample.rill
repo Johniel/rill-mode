@@ -14,7 +14,7 @@ def test_while(): void
     print( "====================\n" );
     print( "test_while\n" );
     print( "====================\n" );
-
+    val a:int;
     val i = 0: mutable(int);
     while( i < 10 ) {
         print_int( i );
